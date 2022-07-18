@@ -52,7 +52,7 @@ pipeline {
                 // The INFRACOST_ENABLE_CLOUD​=true section instructs the CLI to send its JSON output to Infracost Cloud.
                 //   This SaaS product gives you visibility across all changes in a dashboard. The JSON output does not
                 //   contain any cloud credentials or secrets.
-                sh 'infracost comment github --path=/tmp/infracost.json --repo=priyankachouk/infracost-demo --pull-request=7 --github-token='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' --behavior=update'
+                sh 'infracost comment github --path=/tmp/infracost.json --repo=priyankachouk/infracost-demo --pull-request=7 --github-token=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 --behavior=update'
             }
         }
     }
