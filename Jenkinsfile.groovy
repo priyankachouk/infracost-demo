@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('infracost') {
             agent {
-                docker {
+                any {
                     // Always use the latest 0.10.x version to pick up bug fixes and new resources.
                     // See https://www.infracost.io/docs/integrations/cicd/#docker-images for other options
                     image 'infracost/infracost:ci-0.10'
