@@ -29,7 +29,7 @@ pipeline {
                 sh 'git clone $GIT_URL --branch=master --single-branch /tmp/base'
                 sh 'ls -la'
                 sh 'pwd'
-                sh 'curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh'
+                sh 'sudo curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh'
                 sh 'infracost --version'
 
                 // Generate Infracost JSON file as the baseline, add any required sub-directories to path, e.g. `/tmp/base/PATH/TO/TERRAFORM/CODE`.
