@@ -38,7 +38,7 @@ pipeline {
                                         --out-file=/tmp/infracost-base.json'
 
                 // Generate an Infracost diff and save it to a JSON file.
-                sh 'infracost diff --path=PATH/TO/TERRAFORM/CODE \
+                sh 'infracost diff --path=/tmp/base/sample1 \
                                    --format=json \
                                    --compare-to=/tmp/infracost-base.json \
                                    --out-file=/tmp/infracost.json'
