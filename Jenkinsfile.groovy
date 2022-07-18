@@ -24,6 +24,8 @@ pipeline {
             steps {
                 // Clone the base branch of the pull request (e.g. main/master) into a temp directory.
                 sh 'git clone $GIT_URL --branch=master --single-branch /tmp/base'
+                sh 'ls -la'
+                sh 'pwd'
 
                 // Generate Infracost JSON file as the baseline, add any required sub-directories to path, e.g. `/tmp/base/PATH/TO/TERRAFORM/CODE`.
                 sh 'infracost breakdown --path=/tmp/base \
