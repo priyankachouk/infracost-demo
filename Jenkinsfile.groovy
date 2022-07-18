@@ -29,7 +29,6 @@ pipeline {
                 sh 'git clone $GIT_URL --branch=master --single-branch /tmp/base'
                 sh 'ls -la'
                 sh 'pwd'
-                sh 'sudo curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh'
                 sh 'infracost --version'
 
                 // Generate Infracost JSON file as the baseline, add any required sub-directories to path, e.g. `/tmp/base/PATH/TO/TERRAFORM/CODE`.
@@ -53,11 +52,7 @@ pipeline {
                 // The INFRACOST_ENABLE_CLOUD​=true section instructs the CLI to send its JSON output to Infracost Cloud.
                 //   This SaaS product gives you visibility across all changes in a dashboard. The JSON output does not
                 //   contain any cloud credentials or secrets.
-                sh 'INFRACOST_ENABLE_CLOUD​=true infracost comment github --path=/tmp/infracost.json \
-                                                                          --repo=$GITHUB_REPO \
-                                                                          --pull-request=$GITHUB_PULL_REQUEST_NUMBER \
-                                                                          --github-token=$GITHUB_TOKEN \
-                                                                          --behavior=update'
+                sh 'infracost comment github --path=/tmp/infracost.json --repo=$GITHUB_REPO --pull-request=$GITHUB_PULL_REQUEST_NUMBER --github-token=$GITHUB_TOKEN --behavior=update'
             }
         }
     }
