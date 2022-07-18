@@ -13,7 +13,7 @@ pipeline {
 
             // Set up any required credentials for posting the comment, e.g. GitHub token, GitLab token
             environment {
-                INFRACOST_API_KEY = credentials('jenkins-infracost-api-key')
+                INFRACOST_API_KEY = 'v7i8AkGKwMPZTZBb7BcKJ0BrVOuQWxBA'
                 // If you're using Terraform Cloud/Enterprise and have variables or private modules stored
                 // on there, specify the following to automatically retrieve the variables:
                 // INFRACOST_TERRAFORM_CLOUD_TOKEN: credentials('jenkins-infracost-tfc-token')
