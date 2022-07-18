@@ -24,6 +24,7 @@ pipeline {
             steps {
                 // Clone the base branch of the pull request (e.g. main/master) into a temp directory.
                 sh 'ls -la'
+                sh 'rm -rf ./*'
                 sh 'git clone $GIT_URL --branch=master --single-branch /tmp/base'
                 sh 'ls -la'
                 sh 'pwd'
